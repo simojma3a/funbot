@@ -34,31 +34,19 @@ This is a bot made in Python for the Python course @HE-ARC.
 
 ## Download
 
-You can download it directly from here, but the file doesn't contain the Slack token nor the Google API key (config.py).
+You can download it directly from here.
 
-__OR__
 
-You can download it from the command prompt (as it is on Pypi and the token has been kept \* ) :
-```
-> pip install ...
-```
 ## Installation
 
 
 
 ## Documentation
 
-You can see the Sphinx documentation here : 
+You can see the documentation here in docs, the documentation was realized by pycco.
 
-- [Frnnybot on Pypi]
-
-__AND__
-
-the presentation's slides here :
-
-- [Frybot 1.0.0 : Google Slides ]
 
 ## Misc information
 
-This is a school project and the bot is far from being perfect, it sure needs some refactor and further improvement.
+This is a school project and the bot is far from being perfect, it sure needs some refactor and further improvement, 
 
