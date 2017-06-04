@@ -4,16 +4,17 @@ This is a bot made in Python for the Python course @HE-ARC.
 
 ## Commands 
 
-help       	
-whomade    	who made funbot?
-info       	info about bot
-invite     	FunBot invite link
-sourcecode 	Fun's source code
-meteo    	  get the weather of your city
-clear      	Delete all the message
-video    	  get the youtube video of your choise
-song 		    get the musique of your choise on soundcloud
-img      	  get a funny image or gif     
+
+	- help       	
+	- whomade    	who made funbot?
+	- info       	info about bot
+	- invite     	FunBot invite link
+	- sourcecode 	Fun's source code
+	- meteo    	  get the weather of your city
+	- clear      	Delete all the message
+	- video    	  get the youtube video of your choise
+	-song 		    get the musique of your choise on soundcloud
+	- img      	  get a funny image or gif     
 
   
 ### How to use the bot
