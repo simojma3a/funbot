@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>funnybot.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>funnybot.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">discord</span>
+<span class="kn">from</span> <span class="nn">discord.ext</span> <span class="kn">import</span> <span class="n">commands</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+
+
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">commands</span><span class="o">.</span><span class="n">Bot</span><span class="p">(</span><span class="n">command_prefix</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&gt;&gt; &#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&gt;bot &#39;</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;this is Funnybot.&#39;</span><span class="p">)</span>
+<span class="n">Token</span> <span class="o">=</span> <span class="s1">&#39;MzE5NTI3NTMwMDE5MjkxMTU3.DBRkaA.x9CeoWNl7TGgy_DlQeCh8tXBuSI&#39;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.event</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">on_ready</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Logged in as&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">bot</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">bot</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;------&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>await bot.change_presence(status=discord.Status("offline"))</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>who made snek?</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">()</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">whomade</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s1">&#39;Mohamed Jmaa made the FunnyBot&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>info about bot</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">()</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">info</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s1">&#39;this bot was made by Mohamed Jmaa, you can use it to: </span><span class="se">\n</span><span class="s1"> - Find some videos</span><span class="se">\</span>
+<span class="s1">     on youtube </span><span class="se">\n</span><span class="s1"> - look up for the temperature in your city </span><span class="se">\n</span><span class="s1"> - listen to music on soundcloud </span><span class="se">\n</span><span class="s1"> - find funny picture</span><span class="se">\</span>
+<span class="s1">     </span><span class="se">\n</span><span class="s1"> Have fun &#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>FunnyBot invite link</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">()</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">invite</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s1">&#39;to add snekbot to your server click this: https://goo.gl/HTxJWJ&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Funny's source code</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">()</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">sourcecode</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s1">&#39;https://github.com/SplitPixl/snekbot&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>get the weather of your city</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">(</span><span class="n">pass_context</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">meteo</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="n">city</span> <span class="o">=</span> <span class="n">message</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;Fribourg&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">message</span> <span class="o">==</span> <span class="s1">&#39;fribourg&#39;</span><span class="p">)):</span>
+        <span class="n">city</span> <span class="o">=</span> <span class="n">message</span><span class="o">+</span><span class="s1">&#39;-fr&#39;</span>
+    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s1">&#39;http://www.prevision-meteo.ch/uploads/widget/</span><span class="si">%s</span><span class="s1">_0.png&#39;</span> <span class="o">%</span> <span class="n">city</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>Delete all the message</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">(</span><span class="n">pass_context</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> 
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">async</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bot</span><span class="o">.</span><span class="n">logs_from</span><span class="p">(</span><span class="n">ctx</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">channel</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="n">number</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+            <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">delete_message</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.2</span><span class="p">)</span> <span class="c1">#1.2 second timer so the deleting process can be even</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>get the youtube video of your choise</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">(</span><span class="n">pass_context</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">video</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">link_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Searching YouTube for: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">message</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.youtube.com/results?search_query=&quot;</span> <span class="o">+</span> <span class="n">message</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">vid</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;yt-uix-tile-link&#39;</span><span class="p">}):</span>
+            <span class="n">link_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;https://www.youtube.com&#39;</span> <span class="o">+</span> <span class="n">vid</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">])</span>
+    <span class="n">random_num</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">link_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="n">link_list</span><span class="p">[</span><span class="n">random_num</span><span class="p">])</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>get the musique of your choise on soundcloud</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">(</span><span class="n">pass_context</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">song</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">link_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;Searching SoundCloud for: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">message</span><span class="p">)</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://soundcloud.com/search?q=&quot;</span> <span class="o">+</span> <span class="n">message</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="o">!=</span> <span class="s2">&quot;/search&quot;</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="o">!=</span> <span class="s2">&quot;http://&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="o">!=</span> <span class="s2">&quot;/popula&quot;</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span> <span class="o">!=</span> <span class="s2">&quot;/&quot;</span><span class="p">):</span>
+                            <span class="n">link_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;https://soundcloud.com&quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">])</span>
+    <span class="n">random_num</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">link_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="n">link_list</span><span class="p">[</span><span class="n">random_num</span><span class="p">])</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <p>get a funny image or gif</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nd">@bot.command</span><span class="p">(</span><span class="n">pass_context</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">async</span> <span class="k">def</span> <span class="nf">img</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">link_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://imgur.com/search?q=&quot;</span> <span class="o">+</span> <span class="n">message</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">])</span> <span class="o">==</span> <span class="s2">&quot;/gallery/&quot;</span><span class="p">):</span>
+            <span class="n">link_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;https://imgur.com/&quot;</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">])</span>
+    <span class="n">random_num</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">link_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">await</span> <span class="n">bot</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="n">link_list</span><span class="p">[</span><span class="n">random_num</span><span class="p">])</span>
+
+<span class="n">bot</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">Token</span><span class="p">)</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
