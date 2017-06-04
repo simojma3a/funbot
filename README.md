@@ -1,0 +1,2 @@
+# funbot
+discord bot 
