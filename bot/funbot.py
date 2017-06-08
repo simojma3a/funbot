@@ -10,7 +10,7 @@ from pprint import pprint
 #class FryBot(object):
 """Bot that sends Futurama's Fry memes and quotes."""
 
-bot = commands.Bot(command_prefix=['>> ', '>>bot '], description='this is Funnybot.')
+bot = commands.Bot(command_prefix=['>> ', '>>bot '], description='this is Funbot.')
 Token = 'MzE5NTI3NTMwMDE5MjkxMTU3.DBRkaA.x9CeoWNl7TGgy_DlQeCh8tXBuSI'
 
 
@@ -29,7 +29,7 @@ async def on_ready():
 @bot.command()
 async def whomade():
     """who made snek?"""
-    await bot.say('Mohamed Jmaa made the FunnyBot')
+    await bot.say('Mohamed Jmaa made the FunBot')
 
 @bot.command()
 async def info():
@@ -38,17 +38,14 @@ async def info():
      on youtube \n - look up for the temperature in your city \n - listen to music on soundcloud \n - find funny picture\
      \n Have fun ')
 
-@bot.command()
-async def invite():
-    """FunnyBot invite link"""
-    await bot.say('to add snekbot to your server click this: https://goo.gl/HTxJWJ')
+
 
 
 
 @bot.command()
 async def sourcecode():
     """Funny's source code"""
-    await bot.say('https://github.com/SplitPixl/snekbot')
+    await bot.say('https://github.com/simojma3a/funbot')
 
 
 
