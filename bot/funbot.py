@@ -6,12 +6,11 @@ from urllib.request import urlopen
 import random
 from pprint import pprint
 
-#TOKEN = 'MzE5NTI3NTMwMDE5MjkxMTU3.DBRkaA.x9CeoWNl7TGgy_DlQeCh8tXBuSI'
-#class FryBot(object):
-"""Bot that sends Futurama's Fry memes and quotes."""
+
 
 bot = commands.Bot(command_prefix=['>> ', '>>bot '], description='this is Funbot.')
-Token = 'MzE5NTI3NTMwMDE5MjkxMTU3.DBRkaA.x9CeoWNl7TGgy_DlQeCh8tXBuSI'
+"""Token = 'MzE5NTI3NTMwMDE5MjkxMTU3.DBRkaA.x9CeoWNl7TGgy_DlQeCh8tXBuSI'"""
+Token ='MzE5NTI3NTMwMDE5MjkxMTU3.DBqpkw.c1mikj72050zkfJyebh1HdwlInI'
 
 
 @bot.event
@@ -28,12 +27,12 @@ async def on_ready():
 
 @bot.command()
 async def whomade():
-    """who made snek?"""
+    """who made FunBot?"""
     await bot.say('Mohamed Jmaa made the FunBot')
 
 @bot.command()
 async def info():
-    """info about bot"""
+    """info about FunBot"""
     await bot.say('this bot was made by Mohamed Jmaa, you can use it to: \n - Find some videos\
      on youtube \n - look up for the temperature in your city \n - listen to music on soundcloud \n - find funny picture\
      \n Have fun ')
@@ -44,7 +43,7 @@ async def info():
 
 @bot.command()
 async def sourcecode():
-    """Funny's source code"""
+    """FunBot's source code"""
     await bot.say('https://github.com/simojma3a/funbot')
 
 
